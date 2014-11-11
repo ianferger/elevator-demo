@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--encoding meta -->
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+		<!--content metadata -->
+		<title>Fun with RequireJS/KnockoutJS/CSS3 - The Elevator Paradox Demo- © Ian Douglass Ferger, 2014</title>
+		<link rel="image_src" href="media/images/elevator-component/preview.jpg" />
+		<link rel="canonical" href="index.html" />
+
+		<meta name="copyright" content="Ian Douglass Ferger">
+		<meta property="og:image" content="media/images/elevator-component/preview.jpg" />
+		<meta property="og:title" content="Fun with RequireJS/KnockoutJS/CSS3 - a virtual elevator panel" />
+		<meta property="og:url" content="http://iandouglassferger.myartsonline.com/elevator-panel/" />
+		<meta property="og:site_name" content="Development by Ian Douglass Ferger" />
+		<meta charset="utf-8">
+
+		<!-- responsive design meta-->
+		<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+		<meta name='viewport' content='width=device-width'>
+		
+
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="cleartype" content="on">
+
+
+		<!-- load requireJS config data -->
+		<script src="app/require.config.js"></script>
+
+		<!-- init require and begin lazy async loading of scripts, css, html -->
+		<script data-main="app/startup" src="bower_modules/requirejs/require.js"></script>
+
+	</head>
+
+	<body>
+		<!-- wrapper for knockout app component-->
+		<div class="elevator-panel " data-bind="component: 'elevator-panel'"></div>
+	</body>
+</html>

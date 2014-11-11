@@ -1,0 +1,36 @@
+﻿<!-- app container -->
+<!--<div class="common panel fadeIn scaled rounded-corner">-->
+<div class="fadeIn">
+	<!--display wrapper-->
+	<div class="screen">
+		<!--displays floor number-->
+	
+		<div class="half left font-large" data-bind="text: displayedStop()"></div>
+
+		<!--displays state animations-->
+	
+		<div class="half right font-medium"
+			 data-bind="html: animationText, css: animationCSSClass(),
+				event: {
+				animationiteration: onAnimationComplete, webkitAnimationIteration: onAnimationComplete,
+				oanimationiteration: onAnimationComplete }"></div>
+		</div>
+
+	<!--buttons loop-->
+	<div class="buttonContainer" data-bind="foreach: { data: availableStops, as: 'buttonValue'}">
+
+		<input type="button" class="button buttonState"
+			   data-bind="value: buttonValue,
+			   event: { mousedown: $parent.onBtnMouseDown, touchstart: $parent.onBtnMouseDown,
+						mouseup: $parent.onBtnMouseUp , touchend: $parent.onBtnMouseUp },
+				css: { selected : ( $parent.queuedStops.indexOf( buttonValue ) > -1 ||
+						$parent.holdState() === buttonValue ),
+					btnRight: !(buttonValue%2) , btnLeft: (buttonValue%2) }">
+
+	</div>
+	
+	<!--intro screen-->
+	<div class="intro font-small " data-bind="click: setInitialized,html: introContent,
+	css:{ fadeIn: !initialized() , fadeOut : initialized() }"></div>
+
+</div>

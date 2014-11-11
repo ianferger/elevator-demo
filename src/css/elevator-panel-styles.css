@@ -1,0 +1,325 @@
+/*@font app readout font*/
+@font-face {
+    font-family: 'led-dover';
+    src: url('../media/fonts/dover/dover-led-v2-webfont.eot');
+    src: url('../media/fonts/dover/dover-led-v2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../media/fonts/dover/dover-led-v2-webfont.woff2') format('woff2'),
+         url('../media/fonts/dover/dover-led-v2-webfont.woff') format('woff'),
+         url('../media/fonts/dover/dover-led-v2-webfont.ttf') format('truetype'),
+         url('../media/fonts/dover/dover-led-v2-webfont.svg#dover_led_v2regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*@group document level layout */
+ /* universal sizing and backface (for mobile)*/
+*{
+
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+ /* background */
+body{
+	background-color: #000000;
+	margin:0 auto;
+}
+
+ /* app sizing wrapper @see media queries */
+.elevator-panel{
+	width: 505px;
+	height: 1005px;
+	padding: 0;
+	position: relative;
+	margin: 0 auto;
+	
+}
+
+/*@group app level layout */
+
+
+/*app container */
+.elevator-panel > div{
+	/*max-width: 500px;
+	max-height: 1000px;*/	
+
+	max-width: 640px;
+	max-height: 1280px;
+	
+	margin: 0 auto;
+		
+	position: absolute;
+	overflow:hidden;
+
+	background-repeat: no-repeat;
+	background-image: url(../media/images/elevator-component/elevatorPanel.png);
+	background-size:  contain;
+	background-origin:border-box;
+
+	font-family:led-dover;
+    color: red;
+	
+	border: 3px solid #808080;
+	    
+	-o-box-shadow:  2px 2px 2px 2px #282828;
+	-moz-box-shadow:  2px 2px 2px 2px #282828;
+	-webkit-box-shadow:  2px 2px 2px 2px #282828;
+	box-shadow:  2px 2px 2px 2px #282828;
+}
+
+/*@group app level text formatting */
+
+
+.elevator-panel li {
+	margin-bottom: 10%;
+}
+
+.elevator-panel p {
+	margin: 3%;
+	text-align: justify;
+}
+
+.elevator-panel .center {
+	display:inline-block;
+	width: 100%;
+	line-height: 140%;
+	text-align:center;
+}
+
+/*3d text*/
+.elevator-panel .three-d-text{
+
+	 text-shadow: 0 1px 0 #aaa,
+        0 2px 0 #b1b0b0,
+        0 3px 0 #888,
+        0 4px 0 #a5a5a5,
+        0 5px 0 #878787,
+        0 6px 1px rgba(0,0,0,.1),
+        0 0 5px rgba(0,0,0,.1),
+        0 1px 3px rgba(0,0,0,.3),
+        0 3px 5px rgba(0,0,0,.2),
+        0 5px 10px rgba(0,0,0,.25),
+        0 10px 10px rgba(0,0,0,.2),
+        0 20px 20px rgba(0,0,0,.15);
+
+}
+
+
+/*@group intro screen*/
+
+/*intro container*/
+.elevator-panel .intro {
+	position:absolute;
+	display:inline;
+	width: inherit;
+	height: inherit;
+	z-index: 100;
+	top:0;
+	left:0;
+	margin: 0;
+	
+	/*padding: 5%;*/
+	background: rgb(0, 0, 0);
+	/*background: rgba(0, 0, 0, 0.7);*/
+
+	color: #ffffff;
+	/*color: #222;
+	text-shadow: 0px 2px 3px #555;*/
+
+	font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+	
+}
+.elevator-panel .intro a{
+	text-decoration: none;
+	color: #ffffff;
+
+}
+
+.elevator-panel .intro a:hover{
+	text-decoration: none;
+	color: #6ec3fb;
+	
+	
+}
+
+ 
+
+
+ /*@group button*/
+
+/* container div for buttons*/
+.elevator-panel .buttonContainer {
+	position: absolute;
+	display:inline-block;
+
+	top:42.5%;
+	left:27.2%;
+	width:	64%;
+	height:	50%;
+
+	z-index: 2;
+}
+
+ /*single button*/
+.elevator-panel .button{
+	position: relative;
+	width: 27.8%;
+	height: 18%;
+	margin-bottom: 4%;
+	
+	cursor: pointer;
+	border:none;
+	color: transparent;
+	z-index: auto;
+
+	background-size:  contain;
+	background-repeat: no-repeat;
+
+	-moz-border-radius: 10%;
+	-webkit-border-radius: 10%;
+	-o-border-radius: 10%;
+	border-radius: 10%;
+}
+
+ /*column of buttons on left*/
+.elevator-panel .btnLeft {	
+	float: left; 
+	z-index: 9;
+}
+
+ /*column of buttons on right*/
+.elevator-panel .btnRight {	
+	float: right; 
+	margin-left: 44.3%;	
+}
+
+ /* button state default (camelcased for knockout*/
+.elevator-panel .buttonState{
+	background-image: url(../media/images/elevator-component/buttonUp.png);
+	background-color: transparent;
+	-webkit-box-shadow:  none;
+	-moz-box-shadow:  none;
+	-o-box-shadow:  none;
+	box-shadow:  none;
+}
+
+ /* button state mouse down (camelcased for knockout*/
+.elevator-panel .buttonState:active{
+	background-color: #FFFFFF;
+	background-image: url(../media/images/elevator-component/buttonDown.png);
+	-webkit-box-shadow:  0 0 30px 12px rgba(255, 255, 255, .75);
+	-moz-box-shadow:  0 0 30px 12px rgba(255, 255, 255, .75);
+	-o-box-shadow:  0 0 30px 12px rgba(255, 255, 255, .75);
+	box-shadow:  0 0 30px 12px rgba(255, 255, 255, .75);
+
+}
+
+ /* button state floor selected (camelcased for knockout*/
+.elevator-panel .selected{
+	background-color: #FFFFFF;
+	background-image: url(../media/images/elevator-component/buttonSelected.png);
+	-webkit-box-shadow:  0 0 15px 7px rgba(255, 255, 255, .75);
+	-moz-box-shadow:  0 0 15px 7px rgba(255, 255, 255, .75);
+	-o-box-shadow:  0 0 15px 7px rgba(255, 255, 255, .75);
+	box-shadow:  0 0 15px 7px rgba(255, 255, 255, .75);
+}
+
+
+/*@group app display screen*/
+ 
+ /*panel readout screen*/
+.elevator-panel .screen{
+	
+	top: 8%;
+	left: 8%;
+	height: 30%;
+	width: 84%;
+	position: absolute;
+	overflow: hidden;
+	/*-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;*/
+	
+	box-shadow: inset 2px 2px 2px 3px #3c3c3c;
+	
+	background-color: #000000;
+	border: 2px solid #808080;
+	border-radius: 8%;
+
+	z-index: 4;
+}
+
+ /*text containers half the screen*/
+.elevator-panel .screen .half{
+    width: 46%;
+    text-align: center;
+	vertical-align:middle;
+    
+	height: 100%;
+	position: absolute;
+	overflow: inherit;
+}
+
+ /*floors display*/
+.elevator-panel .screen .left{
+	
+    float:left;
+    margin-left: 2%;
+	
+	padding-top: 15%;
+}
+
+ /*animation display*/
+.elevator-panel .screen .right {
+	left: -20%;
+	float: right;
+	margin-right: 2%;
+	
+	text-align:center;
+	color: red;
+	
+	z-index: 20;
+}
+
+ /*animation display in motion*/
+.elevator-panel .screen .in-motion {
+	padding-top: 0;
+	left: 0;
+
+	-moz-transform: rotate( 0 );
+	-ms-transform: rotate( 0 );
+	-o-transform: rotate( 0 );
+	-webkit-transform: rotate( 0 );
+	transform: rotate( 0 );
+	
+}
+
+/*@group debug*/
+
+ /* console message container*/
+.log-text{
+	display: block;
+	position: absolute;
+	top: 1100px;
+	width: 100%;
+	height: 2000px;
+	z-index: 888;
+	background-color: #000000;
+	background-image: none;
+	color: #ffffff;
+	padding: 3% 3% 3% 3%;
+	overflow:scroll;
+	/*color: #222;
+	text-shadow: 0px 2px 3px #555;*/
+
+	font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+
+}
