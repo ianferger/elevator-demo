@@ -275,7 +275,7 @@ define( ["knockout", "utils", "audio5", "Logger"], function ( ko, Utils,  Audio5
 *	@see Utils#notFalse
 *  @returns {boolean} true if stop exists in the queue, false otherwise*/
 		function hasStop( val ) {
-			return Utils.notFalse( getStop( vm.queuedStops.indexOf( val ) ) );
+			return Utils.notFalse(  vm.queuedStops.indexOf( val ) );
 		}
 
 
